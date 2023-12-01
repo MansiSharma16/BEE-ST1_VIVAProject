@@ -2,7 +2,7 @@ const mongoose=require("mongoose");
 const config=require("config");
 const uri=config.get("db_string");
 
-exports.dbConnect=()=>{
+exports.Connect=()=>{
     mongoose.connect(uri,{
         useNewUrlParser:true,
         useUnifiedTopology:true
