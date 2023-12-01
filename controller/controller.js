@@ -1,6 +1,6 @@
 const model=require("../model/model")
 
-const getUser=async(req,res)=>{
+const get=async(req,res)=>{
     let user;
     try{
         user=await model.find();
@@ -14,7 +14,7 @@ const getUser=async(req,res)=>{
     res.status(200).json({user});
 }
 
-const createUSer=async(req,res)=>{
+const create=async(req,res)=>{
     try{
         const input=req.body;
         await model.create(input)
@@ -25,7 +25,7 @@ const createUSer=async(req,res)=>{
     }
 }
 
- const getUSerById=async(req,res)=>{
+ const getById=async(req,res)=>{
     let user;
     const id=req.params.id;
     try{
@@ -39,7 +39,7 @@ const createUSer=async(req,res)=>{
     res.status(200).json({user})
 }
 
-const updateuser=async(req,res)=>{
+const update=async(req,res)=>{
     let user;
     const id=req.params.id;
     const {title,author,genre,publicationYear,ISBN}=req.body;
@@ -53,7 +53,7 @@ const updateuser=async(req,res)=>{
     }
 }
 
-const deleteuser=async(req,res)=>{
+const delete=async(req,res)=>{
     const id=req.params.id;
     try{
         await model.findByIdAndDelete(id)
@@ -64,11 +64,11 @@ const deleteuser=async(req,res)=>{
     }
 }
 
-exports.getUser=getUser;
-exports.createUSer=createUSer;
-exports.getUSerById=getUSerById;
-exports.updateuser=updateuser;
-exports.deleteuser=deleteuser;
+exports.get=get;
+exports.create=create;
+exports.getById=getById;
+exports.update=update;
+exports.delete=delete;
 
 
 
