@@ -2,10 +2,10 @@ const express=require("express");
 const router=express.Router();
 const controller=require("../controller/controller");
 
-router.get("/books",controller.getUser);
-router.post("/books",controller.createUSer);
-router.get("/books/:id",controller.getUSerById);
-router.put("/books/:id",controller.updateuser)
-router.delete("/books/:id",controller.deleteuser);
+router.get("/books",controller.get);
+router.post("/books",controller.create);
+router.get("/books/:id",controller.getById);
+router.put("/books/:id",controller.update)
+router.delete("/books/:id",controller.delete);
 
 module.exports=router;
